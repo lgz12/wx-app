@@ -12,3 +12,6 @@
 >>https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html自行下载
 
 >打开微信开发者工具即可看到效果
+
+## 注意
+该小程序用的是本地服务器，后台用php,可根据各人喜好更改，这里不多做解释。
