@@ -9,7 +9,8 @@
 >>git clone `'https://github.com/lgz12/wx-app.git'`
 
 >需要下载并安装微信开发者工具
->>https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html自行下载
+>>https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html
+>>自行下载
 
 >打开微信开发者工具即可看到效果
 
