@@ -1,0 +1,55 @@
+<!--pages/payafter/payafter.wxml-->
+<!--header-container开始-->
+<view class="header-container">
+  <view class="headerdes-box">
+    <text class="gift-title">礼物准备就绪，分享给对方吧!</text>
+  </view>
+</view>
+<!--header-container结束-->
+<!--box-container开始-->
+<view class="box-container">
+  <view class="box">
+      <image class="imgbox" src='{{userPicUrl.avatarUrl}}'></image>  
+    <view class="box-title">
+      <view class="title">
+        <text>送出一份礼物</text>
+      </view>
+    </view>
+    <view class="message-box">
+      <text>{{wish}}</text>
+    </view>
+
+<!--商品列表------------------------------------  -->
+    <!-- <view class="goods-box-one">
+        <text class="iconfont icon-hudiejie"></text>
+          <image src='{{goods.picUrl}}' ></image>  
+        <view class="goodsbtn">
+          <text>{{goods.goodsName}}</text>
+        </view>
+    </view> -->
+    <block wx:for="{{goodsList}}" wx:key="key">
+    <view class='clearfix'>
+     <view class="goods-box_more list clearfix">
+        <view class="iconfont icon-hudiejie"></view>
+        <!-- <image src='{{host}}{{item.goodsPicUrl}}' class="goods-imgbox"></image> -->
+         <image src='{{item.goodsPicUrl}}' class="goods-imgbox"></image>
+        <view class="goods-inform">
+          <text class="goods-title">{{item.goodsName}}</text>
+          <text class="goods-type">{{item.specification}}</text>
+        </view>
+        
+    </view>
+    <text class="goodsnumber">✲ {{item.goodsNum}}</text>
+    </view>
+    </block>
+    <!--商品列表-结束-----------------------------------  -->
+    
+    <view class="bottom-btn clearfix">
+      <button style='background-color:#D84242;color:#fff' open-type="share">送给朋友</button>
+    </view>
+    <view class="number">
+      <text>7 天内无人领取将自动退款</text>
+    </view>
+  </view>
+</view>
+<!--box-container结束-->

@@ -1,0 +1,191 @@
+<!--index.wxml-->
+<!-- header-container开始-->
+<view class="header-container" style='z-index:0;'>
+  <image src="{{headerbg1}}" class="bg"></image>
+   <text class="brand-title"> </text> 
+  <view class="titlebox">
+    <text class="icontitle">求礼</text>
+    <text class="iconfont icon-gift_icon"></text>
+    <view class="mini-title">
+      <text> 求礼玩法：选礼物-写愿望-转发好友</text>
+    </view>
+  </view>
+</view>
+       
+           
+<!--header-container结束-->
+<!--pick-container开始-->
+
+
+<block wx:if="{{giftNumSend == 0}}">
+    <!--pick-container开始-->
+    <view class="pick-container" catchtap='selectGift'>
+        <view class="pickbox">
+      <!-- <image src="{{logo}}"></image> -->
+      <image src="/image/box1.png"></image>
+      <text class='t1'>开始挑选礼物</text>
+       <text class='t2'>点击这里，挑选喜欢的礼物</text>
+       <text class="iconfont icon-fanhui3"></text>
+    </view>
+    </view>
+    <!--pick-container结束-->
+</block>
+<block wx:else>
+
+    <view class="pick-container">
+
+         <view class="pick-box">   
+        <scroll-view scroll-y="true"  class="pick-box" >
+            <block wx:for="{{goodsList}}" wx:key="key">
+
+                <view class="list-box clearfix">
+                    <!-- <image src='{{host}}{{item.goodsPicUrl}}' class="goods-imgbox"> -->
+                    <image src='{{item.goodsPicUrl}}' class="goods-imgbox">
+                    </image><!--放图片-->
+                    <view class="goods-infor">
+                        <text class="goods-title">{{item.goodsName}}</text>
+                        <text class="goods-type">{{item.specification}}</text>
+                        <view class="goods-price">
+                            <text class="rmb">￥</text>
+                            <text class="price">{{item.money}}</text>
+                        </view>
+                    </view>
+                    <view class="cart-btn">
+                        <text data-index="{{index}}" class='iconfont .icon-jian num_left' bindtap='numReduce'></text>
+                        <text class='goods_num'>{{item.goodsNum}}</text>
+                        <text data-index="{{index}}" class='iconfont .icon-jia num_right' bindtap='increase'></text>
+                    </view><!--做购物车添加按钮-->
+                </view>
+
+            </block>
+        </scroll-view>
+
+
+        <view class="btm-inforbox clearfix">
+            <view class="allnumber">
+                <text>共</text>
+                <text> {{giftNumSend}} </text>
+                <text>件礼物</text>
+            </view>
+            <view class="addbtn" bindtap='addMore'>
+                <text>继续添加></text>
+            </view>
+
+        </view>
+        <!-- <view class='gift'>
+          <view class='gift_car'>
+        
+            <view class='gift_img'>
+              <image src='http://127.0.0.1:8080/images/goodsPic/list-img01.jpg'></image>
+            </view>
+           
+             <view class='gift_msg'>
+                <text>可口可乐\t春季\n</text>
+                
+                <text class='gift_msg_description'>限定硬樱花3屏\n</text>
+                
+                <text class='gift_msg_price'>￥43.00</text>
+            
+             </view>
+             <view class='gift_handler'>
+                <text class='iconfont .icon-jian num_left' bindtap='numReduce'></text>
+             </view>
+          </view>
+          </view>
+       -->
+
+        <!-- <view class="shop_car">
+         <image src='{{host}}{{goods.goodsPicUrl}}'></image>
+         <text class='shop_car_num'>共{{goods.goodsNum}}件礼物</text>
+         <text class="look_all" bindtap='lookAll'>查看全部</text>
+         <text class="shop_car_price">￥{{goods.price}}</text>
+         <text class='shop_goods_name'>商品名</text>
+         
+        
+         <text class="number_handle">
+               <text class='iconfont .icon-jian num_left' bindtap='numReduce'></text>
+             <text class='num_value'>{{goods.goodsNum}}</text>
+             <text class='iconfont .icon-jia num_right' bindtap='increase'></text>
+         </text>
+         <text class="shop_car_add" bindtap='addMore'>
+             继续添加
+         </text>
+        </view> -->
+    </view>
+</view>
+</block>
+
+<!--pick-container结束-->
+<text class='t5'>填写地址</text>
+<block wx:if="{{isWriteAdress}}">
+    <!--address-container开始-->
+    <view class="address-container_1" >
+        <view class="adressbox">
+            <text class="adress-title">我的地址：</text>
+            <view class='textbox'>
+           <text><text></text>\t<text class="adress">{{address.provinceName}}{{address.cityName}}{{address.countyName}}{{address.detailInfo}}</text>\t
+            <text class="adress addr">收件人:{{address.userName}}</text>\t
+            <text class="adress addr">联系电话:{{address.telNumber}}</text></text></view>
+        </view>
+    </view>
+    <!--address-container结束-->
+</block>
+
+<block wx:else>
+
+    <!--address-container开始-->
+    <view class="address-container" bindtap='writeAddress'>
+        <view class="adressbox">
+            <view class="adress-title">我的地址：</view>
+            <view class="adress">您暂未填写地址</view>
+            <!-- <view class="iconfont icon-add" bindtap='writeAddress'></view> -->
+        </view>
+    </view>
+</block>
+<!--address-container结束-->
+<text class='t5 tt'>给对方的留言</text>
+<!--message-container开始-->
+<textarea class="message-container" maxlength="25"	  bindinput ="wishInput"  placeholder='我喜欢这礼物，可以送我吗？'></textarea>
+<!--message-container结束-->
+<!--fixed-btn开始-->
+<!-- <view class="fixed-btn" bindtap='sendGiftClick'>
+    <text>送</text>
+</view> -->
+<!--fixed-btn结束-->
+<!--price-container开始-->
+
+<view class="price-container">
+    <view class="price-box clearfix">
+        <view >
+           <image class='rmb' src='/image/rmb.png'></image>
+           <text class='rmbtext'>{{totalAmountText}}</text>
+        </view>
+        
+    </view>
+</view>
+
+<!--price-container结束-->
+<!--btn-container开始-->
+
+<form name='pushMsgFm' report-submit bindsubmit='pleasePay'>
+<view class="btn-container">
+    <view class="btn-box" >
+    <!--是否是请求朋友支付  -->
+    <block wx:if="{{isPleasePlay}}">
+        <button open-type="share">向朋友求礼</button>
+        </block>
+        <block wx:else>
+            <button form-type="submit">求礼</button>
+        </block>
+    </view>
+</view>
+</form>
+
+<!--btn-container结束-->
+<!--btmnav-container开始-->
+<view class="btmnav-container">
+    <text bindtap='giftRecode'>礼物记录|</text>
+    <text>常见问题|</text>
+    <text>在线客服</text>
+</view>
+<!--btmnav-container结束 -->

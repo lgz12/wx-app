@@ -1,0 +1,47 @@
+/* pages/AA/AA.wxss */
+.bui-header{
+  float: left;margin-left: 60rpx
+}
+page{ 
+  display: flex;
+  height: 100%;
+ flex-direction: column;
+} 
+.navbar{ 
+  font-size: 30rpx;
+  flex: none;
+  display: flex;
+  background: #fff;
+  margin-bottom: 10rpx
+  
+} 
+.navbar .item{ 
+  position: relative;
+ flex: auto;
+ text-align: center;
+ line-height: 80rpx;
+} 
+.navbar .item.active{ 
+  color: #B4052C;
+} 
+.navbar .item.active:after{ 
+  content: "";
+  display: block;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+height: 4rpx;
+background: #B4052C;  
+}
+.img{width: 350rpx;height: 320rpx}
+.font-1{font-size: 28rpx}
+.font-2{font-size: 25rpx;color: gray}
+.font-3{color: goldenrod}
+.j{height: 350rpx;  }
+.slide-image{  
+    width: 100%;  
+   
+} 
+.box{margin-left: 20rpx;float: left;}
+.title{width: 100%;height: 130rpx;margin-bottom: 20rpx;margin-top: 5rpx}

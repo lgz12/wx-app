@@ -1,0 +1,28 @@
+<!--pages/giftbox/giftbox.wxml-->
+<!--topgiftbox-container开始-->
+<view class='background-img' style=' background-image: url(../../image/y.jpg);-webkit-background-size:100% 100%;'>
+<view class="topgiftbox-container">
+  <image src='{{userSendPic}}' class="img-box">
+    
+  </image>
+  <view class="title-box">
+    <text class="title">送来{{goodsNum}}份礼物，点击领取</text>
+    <text class='title_two'>{{title_two}}</text>
+    <text class="message">大吉大利，今晚吃鸡！</text>
+  </view>
+</view>
+<!--topgiftbox-container结束-->
+<!--btmgiftox-container开始-->
+<form name='pushMsgFm' report-submit bindsubmit='getGit'>
+<view class="btmgiftox-container">
+
+  <button class="open-btn" form-type="submit"  open-type='getUserInfo' bindgetuserinfo='getUserInfo'>
+     <!-- <text bindtap='getGit'>{{getGitText}}</text>  -->
+     <text>{{getGitText}}</text>
+  </button>
+
+</view>
+  </form>
+  </view>
+<!--btmgiftox-container结束-->
+

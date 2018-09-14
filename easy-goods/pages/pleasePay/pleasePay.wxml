@@ -1,0 +1,33 @@
+<!--pages/begafter/begafter.wxml-->
+<!--header-container开始-->
+<view class="header-container">
+  <view class="userimg-box"></view><!--放图片-->
+  <view class="title-infor">
+    <text>大哥大姐，求送礼！</text>
+  </view>
+</view>
+<!--header-container结束-->
+<!--box-container开始-->
+<view class="box-container">
+  <view class="list-box clearfix">
+    <view class="goods-imgbox"></view><!--放图片-->
+    <view class="list-des">
+      <view class="list-des-title claerfix">
+        <text class="goods-name">无穷鸡腿</text>
+        <text class="goods-price">¥6.00</text>
+      </view>
+      <view class="goods-number clearfix">
+        <text>共1件</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-btn">
+      <text>我也要求礼</text>
+  </view>
+  <view class="get-inform clearfix">
+    <view class="getimg-box"><!--放图片-->
+    </view>
+    <text class="status">送礼成功</text>
+  </view>
+</view>
+<!--box-container结束-->

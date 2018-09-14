@@ -1,0 +1,33 @@
+
+<!--index.wxml-->
+<view class='top'>
+	<text class="title">One more a chance ~ one more a hope !</text>
+  </view>
+<view class='body'>
+
+<view class="container-out">
+  <view class="circle" wx:for="{{circleList}}" style="top:{{item.topCircle}}rpx;left:{{item.leftCircle}}rpx;background-color: {{(index%2==0)?colorCircleFirst:colorCircleSecond}};"></view>
+  <view class="container-in">
+    <view class="content-out" wx:for="{{awardList}}" style="top:{{item.topAward}}rpx;left:{{item.leftAward}}rpx;background-color: {{(index==indexSelect)?colorAwardSelect:colorAwardDefault}};">
+      <image class="award-image" src="{{item.imageAward}}"></image>
+    </view>
+    <view class="start-btn" bindtap="startGame" style=" background-color:{{isRunning?'#e7930a':'#ffe400'}}">START
+   </view>
+   
+  </view>
+  
+</view>
+ <!-- <text>次数：{{times}}</text>
+ <button catchtap='addtime' >增加次数</button> -->
+ </view>
+ <view class='foot'>
+ 	<view class="main-container-rule">
+				<text class="main-rule-title">活动规则：</text>
+				<text class="main-rule-item">1. 活动期间每个用户可通过（首免/购买/集赞）的形式获得【幸运转盘】;</text>
+				<text class="main-rule-item">2. 每个【幸运转盘】仅有一次抽奖机会；</text>	
+				<text class="main-rule-item">3. 点击【start】开始抽奖；</text>	
+				<text class="main-rule-item">4. 中奖后，点击【确定】跳转至收货地址及收获人详情页，用户填写好相关信息即可等待礼品到位啦！</text>
+        <text class="main-rule-title1">备注：</text>	
+				<text class="main-rule-item">1. 由于系统延迟如未获得抽奖机会请耐心等待；</text>	
+        	<text class="main-rule-item">2. 中奖结果以系统弹出的对话框信息为准。</text>	
+			</view>	</view>

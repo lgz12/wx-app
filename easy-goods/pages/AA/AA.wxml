@@ -1,0 +1,51 @@
+<!--pages/AA/AA.wxml-->
+<!--导航条--> 
+<header>
+<view class="navbar"> 
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+</view> 
+</header>
+<!--全部-->
+<main> 
+<view hidden="{{currentTab!==0}}"> 
+<swiper class='j' indicator-dots="{{indicatorDots}}"  
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+      <block wx:for="{{imgUrls}}">  
+        <swiper-item class='o'>  
+           <navigator url="{{item.link}}" hover-class="navigator-hover">  
+            <image src="{{item.url}}" class="slide-image" />  
+           </navigator>   
+        </swiper-item>  
+      </block>  
+</swiper> 
+</view> 
+<!--title-->
+<view><image  class='title' src='../../image/7.jpg'></image></view>
+<!--礼物-->
+<block wx:for="{{postlist}}" wx:for-item="item" wx:for-index="idx">
+<view class='box'>
+<view>
+ <image bindtap='goodsClick' class='img' src='{{item.img1}}'></image> 
+<!-- <image bindtap='goodsClick' src="{{host}}{{data.one.picUrl}}" data-goodsId="{{data.one.id}}"></image> -->
+</view>
+<text>
+<text class='font-1'>{{item.content1}}</text>\t
+<text class='font-2'>{{item.content2}}</text>\t
+<text class='font-3'>{{item.content3}}</text>
+</text>
+</view>
+</block>
+</main>
+<!--美食--> 
+<view hidden="{{currentTab!==1}}"> 
+ 美食
+</view> 
+  
+<!--美妆--> 
+<view hidden="{{currentTab!==2}}"> 
+ 美妆 
+</view> 
+ 
+
+
+ 

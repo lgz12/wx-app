@@ -1,0 +1,252 @@
+/* pages/winadress/winadress.wxss */
+page{
+  background: #F9F9F9;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/*header-container开始*/
+.header-container{
+  width:100%;
+  height:338rpx;
+  background: #D84242;
+  overflow: hidden;
+  display:flex;
+  justify-content: space-around;
+}
+.headerdes-box{
+  width:325rpx;
+  height:100rpx;
+  margin-top:46rpx;
+  text-align: center;
+}
+.gift-title{
+  font-size:34rpx;
+  color:#FFD0BC;
+  display: block;
+}
+.goods-title{
+  font-size:24rpx;
+  display: block;
+  padding-top:20rpx;
+  color:#FFD0BC;
+}
+/*header-container结束*/
+/*box-container开始*/
+.box-container{
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+  position:relative;
+}
+.box{
+  width:86%;
+  height:1050rpx;
+  background:#fff;
+  position: absolute;
+  top:-100rpx;
+  border-radius:10rpx;
+}
+.imgbox{
+  width:100rpx;
+  height:100rpx;
+  background:#BFBFBF;
+  position: absolute;
+  left:calc(100% - 380rpx);
+  top:-60rpx;
+  border-radius:10rpx;
+}
+.box-title{
+  width:100%;
+  height:24rpx;
+  margin-top:56rpx;
+  margin-bottom:54rpx;
+}
+.title{
+  width:160rpx;
+  height:24rpx;
+  margin-left:239rpx;
+}
+.box-title text{
+  display: block;
+  font-size:24rpx;
+  color:#4C4C4C;
+}
+.message-box{
+  width:515rpx;
+  height:96rpx;
+  border:1px solid #D84242;
+  margin:0 auto;
+  border-radius:10rpx;
+  text-indent: 20rpx;
+}
+.message-box text{
+  font-size:24rpx;
+  color:#909090;
+}
+.goods-box{
+  width:363rpx;
+  height:363rpx;
+  border:1px solid #FACD89;
+  margin:60rpx 125rpx 48rpx 132rpx; 
+  position:relative;
+}
+.goods-box image{
+  width:363rpx;
+  height:363rpx;
+}
+
+.goods-box_more{
+  width:515rpx;
+  height:138rpx;
+  border:1px solid #FACD89;
+  margin:36rpx auto 0;
+  position:relative;
+}
+
+.icon-hudiejie{
+  font-size:50px;
+  position:absolute;
+  top:-7px;
+  left:-3px;
+  transform:rotate(-30deg);
+  color:#F4BFB2;
+}
+.goodsbtn{
+  width:100%;
+  height:65rpx;
+  position:absolute;
+  bottom:0;
+  text-align:center;
+}
+.goodsbtn text{
+  font-size:14px;
+  color:#909090;
+}
+.bottom-btn{
+  width:439rpx;
+  height:87rpx;
+  background:#D84242;
+  margin:0 auto;
+  border-radius:10rpx;
+  text-align:center;
+}
+.bottom-btn text{
+  font-size:34rpx;
+  line-height:87rpx;
+  color:#fff;
+}
+.get-inform{
+  width:517rpx;
+  height:182rpx;
+  background:#F2F2F2;
+  border-radius:10rpx;
+  overflow: hidden;
+  margin:42rpx auto;
+}
+.inform-title{
+  width:90%;
+  height:60rpx;
+  border-bottom:1px solid #ccc;
+  margin:0 auto;
+}
+.inform-title text{
+  font-size:23rpx;
+  color:#909090;
+  display: block;
+  line-height:60rpx;
+}
+.getimg-box{
+  width:75rpx;
+  height:75rpx;
+  background:#fff;
+  margin:13rpx 0rpx 30rpx 30rpx;
+  border-radius: 10rpx;
+  float:left;
+}
+
+.getimg-box image{
+   width:75rpx;
+  height:75rpx;
+}
+
+.goods-name{
+  font-size:21rpx;
+  float:right;
+  padding:50rpx 39rpx 0 0;
+  color:#C0BFBF;
+}
+/*box-container结束*/
+
+.bottom_address{
+  font-size: 29rpx;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+  margin-left: 50rpx;
+}
+
+.address_msg{
+  width: 95%;
+  margin: 0 auto;
+}
+
+/*------------------后来加入-----------------------=============  */
+.goods-imgbox{
+  /* width:150rpx;
+  height:138rpx;
+  float:left;
+  margin-right:26rpx; */
+  width:132rpx;
+height:132rpx;
+float:left;
+margin-right:26rpx;
+padding-top:3rpx;
+margin-left:4rpx;
+
+
+}
+
+.goods-inform{
+  width:365rpx;
+  height:138rpx;
+}
+
+.goods-title{
+  font-size:24rpx;
+  display: block;
+  color:#F9AF3C;
+  padding-top:27rpx;
+}
+.goodsnumber{
+  font-size:23rpx;
+  color:#909090;
+  display: block;
+  padding-top:33rpx;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.goods_btn_split{
+  height: 100rpx;
+  width: 100%;
+}
+
+.icon-hudiejie{
+  font-size:30px;
+  position:absolute;
+  top:-7px;
+  left:-3px;
+  transform:rotate(-30deg);
+  color:#F4BFB2;
+}

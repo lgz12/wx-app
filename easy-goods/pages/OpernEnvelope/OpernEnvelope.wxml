@@ -1,0 +1,78 @@
+<!--pages/winadress/winadress.wxml-->
+<!--header-container开始-->
+<view class="header-container">
+  <view class="headerdes-box">
+    <text class="gift-title">{{titleText}}</text>
+    <!-- <text class="goods-title">获得“无穷鸡腿”</text> -->
+  </view>
+</view>
+<!--header-container结束-->
+<!--box-container开始-->
+<view class="box-container">
+  <view class="box">
+    <image src='{{userSend.picUrl}}' class="imgbox"></image>
+    <view class="box-title">
+      <view class="title">
+        <text>送出了{{giftNum}}件礼物</text>
+      </view>
+    </view>
+    <view class="message-box">
+      <text>{{wish}}</text>
+    </view>
+    <!--商品展示区  -->
+    <!-- <view class="goods-box">
+        <view class="iconfont icon-hudiejie"></view>
+        <image src='{{}}'></image>
+        <view class="goodsbtn">
+          <text>无穷鸡腿</text>
+        </view>
+    </view> -->
+    <block wx:for="{{goodsList}}" wx:key="key">
+       <view class="goods-box_more list clearfix">
+        <view class="iconfont icon-hudiejie"></view>
+        <image src='{{host}}{{item.goodsPicUrl}}' class="goods-imgbox"></image>
+        <view class="goods-inform">
+          <text class="goods-title">{{item.goodsName}}</text>
+          <text class="goodsnumber">共{{item.goodsNum}}件</text>
+        </view>
+    </view>
+    </block>
+
+  
+
+   
+     <!--商品展示区 结束 -->
+
+  <view class="bottom_address" hidden='{{submitIsWriteAdd != 2}}'>
+    <view class='address_msg'>
+      <view>收件人信息：</view>  
+        <text>{{address.provinceName}}\t{{address.cityName}}\t{{address.countyName}}\t{{address.detailInfo}}\n</text>
+        <text>收件人：{{address.userName}}\n</text>
+        <text>联系电话：{{address.telNumber}}</text>
+      </view>
+  </view>
+
+  <!-- ------------商品和按钮分隔区----------- -->
+  <view class='goods_btn_split'>
+
+  </view>
+  <!---------------------------------------  -->
+
+    <view class="bottom-btn" bindtap='writeAddress'>
+      <text>{{submitText}}</text>
+    </view>
+    <view class="get-inform">
+      <view class="inform-title">
+        <text>共送出{{giftNum}}份礼物</text>
+      </view>
+      <view class=" informbox clearfix">
+        <view class="getimg-box">
+        <image src='{{userGet.picUrl}}'></image>
+        </view>
+        <text class="goods-name">获取{{giftNum}}份礼物</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!--box-container结束-->
+

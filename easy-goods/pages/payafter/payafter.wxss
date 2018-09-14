@@ -1,0 +1,225 @@
+/* pages/payafter/payafter.wxss */
+page{
+  background: #F9F9F9;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/*header-container开始*/
+.header-container{
+  width:100%;
+  height:338rpx;
+  background: #D84242;
+  overflow: hidden;
+  display:flex;
+  justify-content: space-around;
+}
+.headerdes-box{
+  width:500rpx;
+  height:100rpx;
+  margin-top:46rpx;
+  text-align: center;
+}
+.gift-title{
+  font-size:34rpx;
+  color:#FFD0BC;
+  display: block;
+}
+/*header-container结束*/
+/*box-container开始*/
+.box-container{
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+  position:relative;
+}
+.box{
+  width:86%;
+  height:983rpx;
+  background:#fff;
+  position: absolute;
+  top:-100rpx;
+  border-radius:10rpx;
+}
+.imgbox{
+  width:100rpx;
+  height:100rpx;
+  background:#BFBFBF;
+  position: absolute;
+  left:calc(100% - 380rpx);
+  top:-60rpx;
+  border-radius:10rpx;
+}
+.box-title{
+  width:100%;
+  height:24rpx;
+  margin-top:56rpx;
+  margin-bottom:54rpx;
+}
+.title{
+  width:160rpx;
+  height:24rpx;
+  margin-left:239rpx;
+}
+.box-title text{
+  display: block;
+  
+  font-size:24rpx;
+  color:#4C4C4C;
+}
+.message-box{
+  width:515rpx;
+  height:96rpx;
+  border:1px solid #D84242;
+  margin:0 auto;
+  border-radius:10rpx;
+  text-indent: 20rpx;
+}
+.message-box text{
+  font-size:24rpx;
+  color:#909090;
+}
+.goods-box-one{
+  width:363rpx;
+  height:363rpx;
+  border:1px solid #FACD89;
+  margin:60rpx 125rpx 48rpx 132rpx; 
+  position:relative;
+}
+
+.goods-box-one image{
+    width:363rpx;
+  height:363rpx;
+}
+
+.goods-box-more{
+  width:410rpx;
+  height:363rpx;
+  border:1px solid #FACD89;
+  margin:60rpx 125rpx 48rpx 132rpx; 
+  position:relative;
+}
+.icon-hudiejie{
+  font-size:50px;
+  position:absolute;
+  top:-7px;
+  left:-3px;
+  transform:rotate(-30deg);
+  color:#F4BFB2;
+}
+.goodsbtn{
+  width:100%;
+  height:65rpx;
+  position:absolute;
+  bottom:0;
+  text-align:center;
+}
+.goodsbtn text{
+   position: relative;
+  top:80rpx; 
+  font-size:14px;
+  color:#909090;
+}
+.bottom-btn{
+  width:439rpx;
+  height:87rpx;
+  background:#D84242;
+  margin:82rpx auto 0;
+  border-radius:10rpx;
+  text-align:center;
+}
+.bottom-btn text{
+  font-size:34rpx;
+  line-height:87rpx;
+  color:#fff;
+}
+.number{
+  display:flex;
+  justify-content: space-around;
+  font-size:25rpx;
+  margin-top:26rpx;
+  color:#909090;
+}
+.goods-type{
+  display: block;
+  font-size:24rpx;
+  color:#ccc;
+  
+}
+
+/*box-container结束*/
+
+/*-----------------------后来加入  */
+.goods-box_more{
+  width:470rpx;
+  height:138rpx;
+  border:1px solid #FACD89;
+  margin:36rpx auto 0;
+  position:relative;
+  left: 60rpx;
+  float: left;
+}
+
+.goods-imgbox{
+  /* width:150rpx;
+  height:138rpx;
+  float:left;
+  margin-right:26rpx; */
+  width:132rpx;
+height:132rpx;
+float:left;
+margin-right:26rpx;
+padding-top:3rpx;
+margin-left:4rpx;
+
+
+}
+
+.goods-inform{
+  width:365rpx;
+  height:138rpx;
+}
+
+.goods-title{
+  font-size:32rpx;
+  display: block;
+  color:#F9AF3C;
+    width: 380rpx;
+  padding-top:27rpx;
+}
+.goodsnumber{
+  font-size:30rpx;
+  color:#909090;
+  display: block;
+  padding-top:33rpx;
+  float: right;
+   position:relative;
+  left: -55rpx;
+  top: 70rpx;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.goods_btn_split{
+  height: 100rpx;
+  width: 100%;
+}
+
+.icon-hudiejie{
+  font-size:30px;
+  position:absolute;
+  top:-7px;
+  left:-3px;
+  transform:rotate(-30deg);
+  color:#F4BFB2;
+}

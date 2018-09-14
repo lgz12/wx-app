@@ -1,0 +1,127 @@
+<!--pages/select-index/select-index.wxml-->
+<!--topNav-container开始-->
+
+<header>
+<view class="navbar"> 
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{index==typeIndex ? 'active' : ''}}" wx:key="unique" bindtap="typeClick">{{item}}</text> 
+</view> 
+</header>
+<!--topNav-container结束-->
+<!--banner-container开始-->
+<view class="banner-container" hidden='{{indexPageHidden}}'>
+  <swiper indicator-dots='true' autoplay='true' interval='5000'>
+    <!-- <swiper-item>
+      <image bindtap='turntable' src="{{url}}"></image>
+    </swiper-item> -->
+    <swiper-item>
+      <image  bindtap='turntest' src="{{header}}"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="{{header1}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view><image class='title1' src='../../image/7.jpg'></image></view>
+<!--banner-container结束->
+<!--list-container开始-->
+ 
+<!--所有类别  -->
+<view class="list-container" hidden='{{indexPageHidden}}'>
+  <view class="title-container">
+     
+     
+  </view>
+    <!--商品名  -->
+   <block wx:for="{{list.data}}" wx:key="this" wx:for-item="items"> 
+      <view class='list-box'>
+      <view class="list-content">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{host}}{{items.one.coverPic}}" data-goodsId="{{items.one.id}}"></image> 
+        </view>
+          <text class="goods-title">{{items.one.goodsName}}</text>
+         <view class="goods-detail">
+    <text>{{items.one.description}}</text>
+  </view>
+        <text class="goods-price">¥ {{items.one.price}}</text>  
+      </view>
+       <view class="list-content">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{host}}{{items.two.coverPic}}" data-goodsId="{{items.two.id}}"></image> 
+        </view>
+          <text class="goods-title">{{items.two.goodsName}}</text>
+         <view class="goods-detail">
+    <text>{{items.two.description}}</text>
+  </view>
+        <text class="goods-price">¥ {{items.two.price}}</text>  
+      </view>
+
+  </view>
+  </block> 
+ <block wx:for="{{list.data}}" wx:key="this" wx:for-item="items"> 
+      <view class='list-box'>
+      <view class="list-content">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{host}}{{items.one.coverPic}}" data-goodsId="{{items.one.id}}"></image> 
+        </view>
+          <text class="goods-title">{{items.one.goodsName}}</text>
+         <view class="goods-detail">
+    <text>{{items.one.description}}</text>
+  </view>
+        <text class="goods-price">¥ {{items.one.price}}</text>  
+      </view>
+       <view class="list-content">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{host}}{{items.two.coverPic}}" data-goodsId="{{items.two.id}}"></image> 
+        </view>
+          <text class="goods-title">{{items.two.goodsName}}</text>
+         <view class="goods-detail">
+    <text>{{items.two.description}}</text>
+  </view>
+        <text class="goods-price">¥ {{items.two.price}}</text>  
+      </view>
+
+  </view>
+  </block> 
+</view>
+
+
+<!--其他类别  -->
+<view class="list-container" hidden='{{indexPageHidden1}}'>
+  <view class="title-container">
+     
+     
+  </view>
+    <!--商品名  -->
+   <block wx:for="{{list.data}}" wx:key="this" wx:for-item="items"> 
+      <view class='list-box'>
+      <view class="list-content">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{host}}{{items.one.coverPic}}" data-goodsId="{{items.one.id}}"></image> 
+        </view>
+          <text class="goods-title">{{items.one.goodsName}}</text>
+         <view class="goods-detail">
+    <text>{{items.one.description}}</text>
+  </view>
+        <text class="goods-price">¥ {{items.one.price}}</text>  
+      </view>
+       <view class="list-content">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{host}}{{items.two.coverPic}}" data-goodsId="{{items.two.id}}"></image> 
+        </view>
+          <text class="goods-title">{{items.two.goodsName}}</text>
+         <view class="goods-detail">
+    <text>{{items.two.description}}</text>
+  </view>
+        <text class="goods-price">¥ {{items.two.price}}</text>  
+      </view>
+
+  </view>
+  </block> 
+ 
+</view>

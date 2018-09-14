@@ -1,0 +1,103 @@
+<!--pages/test/test.wxml-->
+<!-- 
+<button bindtap='testPay'>支付</button>
+<button open-type='getUserInfo' bindgetuserinfo="test">登陆</button>
+<button bindtap='access'>获取访问数</button> -->
+
+
+<!-- <block wx:for="{{list}}" wx:key="name">
+  <view>{{item.id}}</view>
+  <view>
+    <text>{{item.name}}</text>
+  </view>
+  <image src='{{local}}{{item.img}}'></image>
+</block> -->
+<!--banner-container开始-->
+<view class="inputcontainer">
+    <view class="input" catchtap="inputSwitchStatus" wx:if="{{!edit}}"><image class='search' src="/image/search.png"></image><text class='searchtext'>搜索热门礼物</text></view>
+    <view class="edit" wx:else>
+      <form bindsubmit="inputSearch" bindreset="inputReset">
+        <text class="searchicon"></text>
+        <input focus="true" type="text" name="search-input" confirm-type='search' bindconfirm="inputSearch"/>
+        <button class="deleteicon cancel-btn-default-style" catchtap="inputReset" hover-class="clear-btn-hover" formType="reset"></button>
+        <button class="cancel cancel-btn-default-style" hover-class="search-btn-hover" formType="submit">搜索</button>
+      </form>      
+    </view> 
+</view>
+<view class="banner-container" >
+  <swiper indicator-dots='true' autoplay='true' interval='5000'>
+    <!-- <swiper-item>
+      <image bindtap='turntable' src="{{url}}"></image>
+    </swiper-item> -->
+    <swiper-item>
+      <image  bindtap='turntest' src="{{header}}"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="{{header1}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<header>
+<view class="navbar"> 
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{typeIndex==index ? 'active' : ''}}" wx:key="unique" bindtap="typeClick">{{item}}</text> 
+</view> </header>
+    <!-- <view ><image class='title1' src='../../image/7.jpg'></image></view> -->
+<view hidden='{{hiddentop}}'><image class='title1' src='../../image/mr.png'></image></view>
+<!--banner-container结束->
+<!--list-container开始-->
+ 
+<!--所有类别  -->
+<view class="list-container" >
+  <view class="title-container">
+     
+     
+  </view>
+    <!--商品名  -->
+   <block wx:for="{{list}}" wx:key="this" wx:for-item="items"> 
+      <view class='list-box'>
+      <view class="list-content" wx:for="{{items.one}}" wx:key="this" wx:for-item="one">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{local}}{{one.img}}" data-goodsId="{{one.id}}"></image> 
+        </view>
+          <text class="goods-title">{{one.name}}</text>
+         <view class="goods-detail">
+    <text>{{one.description}}</text> 
+  </view>
+        <text class="goods-price">¥ {{one.money}}</text>  
+      </view>
+
+
+  <view hidden='{{hiddentop}}'><image class='title1' src='../../image/rq.png'></image></view>
+       <view class="list-content" wx:for="{{items.two}}" wx:key="this" wx:for-item="two">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{local}}{{two.img}}" data-goodsId="{{two.id}}"></image> 
+        </view>
+          <text class="goods-title">{{two.name}}</text>
+         <view class="goods-detail">
+    <text>{{two.description}}</text>
+  </view>
+        <text class="goods-price">¥ {{two.money}}</text>  
+      </view>
+
+
+      <view hidden='{{hiddentop}}'><image class='title1' src='../../image/cx.png'></image></view>
+       <view class="list-content" wx:for="{{items.three}}" wx:key="this" wx:for-item="three">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{local}}{{three.img}}" data-goodsId="{{three.id}}"></image> 
+        </view>
+          <text class="goods-title">{{three.name}}</text>
+         <view class="goods-detail">
+    <text>{{three.description}}</text>
+  </view>
+        <text class="goods-price">¥ {{three.money}}</text>  
+      </view>
+
+  </view>
+  </block> 
+ 
+
+ 
+</view>

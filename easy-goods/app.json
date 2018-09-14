@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test",
+    "pages/goods/goods",
+    
+    "pages/detail/detail",
+    "pages/goodsDetail/goodsDetail",
+    "pages/search/search",
+  
+    
+    "pages/giftRecord/giftRecord",
+    "pages/payafter/payafter",
+    "pages/joinLottery/joinLottery",
+    "pages/OpernEnvelope/OpernEnvelope",
+    "pages/envelope/envelope",
+    "pages/getGift/getGift",
+    "pages/giftBox/giftBox",
+    "pages/AA/AA",
+    "pages/turntable/turntable",
+    "pages/pleasePay/pleasePay",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "轻松送礼",
+    "navigationBarBackgroundColor": "#D84242",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#D83434",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "image/gifted@2x.png",
+        "iconPath": "image/gift@2x.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "image/baged@2x.png",
+        "iconPath": "image/bag@2x.png",
+        "pagePath": "pages/turntable/turntable",
+        "text": "抽奖"
+      },
+      {
+        "selectedIconPath": "image/kefued@2x.png",
+        "iconPath": "image/kefu@2x.png",
+        "pagePath": "pages/turntable/turntable",
+        "text": "客服"
+      },
+      {
+        "selectedIconPath": "image/loged@2x.png",
+        "iconPath": "image/log@2x.png",
+        "pagePath": "pages/giftRecord/giftRecord",
+        "text": "礼物记录"
+      }
+    ]
+  }
+}

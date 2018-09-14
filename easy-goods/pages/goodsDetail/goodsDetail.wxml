@@ -1,0 +1,138 @@
+<!--pages/select-details/select-details.wxml-->
+<!--header-container开始-->
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class="header-container">
+  <swiper indicator-dots='true' autoplay='true' interval='5000'>
+   <block wx:for="{{goodsPicArr}}" wx:key="key"> 
+    <swiper-item>
+           <image src="{{host}}{{item.picUrl}}"></image> 
+
+      </swiper-item>
+     
+     </block> 
+  </swiper> 
+</view>
+<!--header-container结束-->
+<!--des-container开始-->
+<view class="des-container">
+  <view class="goods-title">
+    <text>{{goodsName}}</text>
+  </view>
+  <view class="goods-detail">
+    <text>{{description}}</text>
+  </view>
+  <view class="goods-price">
+    <text>¥ {{money}}</text>
+  </view>
+  
+</view>
+
+<!--des-container结束-->
+<!--title-container开始-->
+<view class="title-container">
+  <text class="title">详情</text>
+  
+</view>
+
+<!--title-container结束-->
+<!--details-container开始-->
+<view class="details-container">
+  <view class="details-box">
+    <!-- <block wx:for="{{goodsList}}" wx:key="key">  -->
+<!--类别  -->
+<view class="list-container" hidden='{{indexPageHidden}}'>
+  
+    <!--商品名  -->
+      <!-- <block wx:for="{{item.data}}" wx:key="key"  wx:for-item="data" wx:for-index="idx">  -->
+      <view class='list-box'>
+      <view class="list-content">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{data.one.picUrl}}" data-goodsId="{{data.one.id}}"></image>  -->
+            <!-- <img bindtap='goodsClick' src="/image/t4.jpg" data-goodsId="{{data.one.id}}"></img> -->
+           <!-- <image bindtap='goodsClick' src="/image/t5.jpg" data-goodsId="{{data.one.id}}"></image>
+            <image bindtap='goodsClick' src="/image/t6.jpg" data-goodsId="{{data.one.id}}"></image>   -->
+          <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+           
+        </view>
+       
+      </view>
+      
+
+      <!-- <view class="list-content">
+        <view class="img-box">
+          <image data-goodsId="{{data.two.id}}" src="{{host}}{{data.two.picUrl}}" bindtap='goodsClick'></image>
+        </view>
+         
+      </view> -->
+    </view>
+  
+  <!-- </block>  -->
+
+
+</view>
+
+ <!-- </block>  -->
+        
+      
+  </view>
+</view>
+<!--details-container结束-->
+<!--btmbtn-container开始-->
+<view class="btmbtn-container">
+  <view class="btn-box" bindtap='showModal'>
+    <text>送给朋友</text>
+  </view>
+</view>
+<!--btmbtn-container结束-->
+<!--rightnav-container开始-->
+<!-- <view class="rightnav-container">
+  <view class="beg-btn" bindtap='getGiftPage'>
+    <text>求</text>
+  </view>
+   <view class="ind-btn" bindtap='goHome'>
+    <text class="iconfont icon-tubiao-"></text>
+    <text class="ind">首页</text>
+  </view> 
+</view> -->
+
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+<!--底部弹出框  -->
+<view class='bottom_content'>
+      <view class='bottom_goods'>
+        <image src='{{host}}{{goodsPic}}'></image>
+        <text class="gooods_price">￥{{money}}</text>
+        <text class="iconfont .icon-cancel-1-copy" bindtap='modalCancel'></text>
+      </view>
+      <!--线  -->
+      <view class='bottom_line'></view>
+      <!--线结束  -->
+      <!--商品规格  -->
+        <text class='wenzi'>规格</text>
+      <view class="bottom_spec">
+    
+       <block wx:for="{{specArr}}" wx:key="key"> 
+        <text data-index="{{index}}" class="{{item.isChecked?'selected':''}}" bindtap='specClick'>{{item.standardName}}</text>
+       </block> 
+      
+  
+      </view>
+       <!--线  -->
+       <view class='bottom_line'></view>
+          
+      <!--线结束  -->
+      <text class='wenzi'>数量</text>
+      <view class='bottom_number'>
+        <text class='iconfont .icon-jian num_left' bindtap='numReduce'></text>
+        <text class='num_value'>{{goodsNum}}</text>
+        <text class='iconfont .icon-jia num_right' bindtap='increase'></text>
+      </view>
+      <!--按钮  -->
+      <view class="bottom_btn">
+        <button open-type='getUserInfo' bindgetuserinfo='addShopCar'>确认</button>
+      </view>
+</view>
+
+</view>
+<!--底部弹出框 结束 -->

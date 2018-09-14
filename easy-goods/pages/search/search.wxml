@@ -1,0 +1,28 @@
+<view class="inputcontainer">
+    <view class="input"><image class='search' src="/image/search.png"></image><input class="searchtext" name="userName" placeholder="搜索热门礼物" bindconfirm='watchPassWord'/></view>
+     <view class="list-container" >
+
+    <!--商品名  -->
+   <block wx:for="{{list}}" wx:key="this" wx:for-item="items"> 
+      <view class='list-box'>
+      <view class="list-content" wx:for="{{items.one}}" wx:key="this" wx:for-item="one">
+        <view class="img-box">
+           <!-- <image bindtap='goodsClick' src="{{host}}{{items.coverPic}}" data-goodsId="{{items.id}}"></image>  -->
+           <image bindtap='goodsClick' src="{{local}}{{one.img}}" data-goodsId="{{one.id}}"></image> 
+        </view>
+          <text class="goods-title">{{one.name}}</text>
+         <view class="goods-detail">
+    <text>{{one.description}}</text> 
+  </view>
+        <text class="goods-price">¥ {{one.money}}</text>  
+      </view>
+      
+
+  </view>
+  </block> 
+ 
+
+ 
+</view> 
+
+</view>

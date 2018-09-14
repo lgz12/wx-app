@@ -1,0 +1,237 @@
+<!--pages/luck/luck.wxml-->
+<!--header-container开始-->
+<view class="header-container" >
+  <image src="{{headerbg1}}" class="bg"></image>
+   <text class="brand-title"> </text> 
+  <view class="titlebox">
+    <text class="icontitle">微信送礼</text>
+    <text class="iconfont icon-gift_icon"></text>
+    <view class="mini-title">
+      <text>微信上送礼·对方填地址·免邮送上门</text>
+    </view>
+  </view>
+</view>
+<!--header-container结束-->
+<view class=''>
+
+<block wx:if="{{giftNumSend == 0}}">
+    <!--pick-container开始-->
+  
+ <view class="pick-container" catchtap='selectGift' >
+    <view class="pickbox">
+      <!-- <image src="{{logo}}"></image> -->
+      <image src="/image/box1.png"></image>
+      <text class='t1'>开始挑选礼物</text>
+       <text class='t2'>点击这里，挑选喜欢的礼物</text>
+       <text class="iconfont icon-fanhui3"></text>
+    </view>
+</view> 
+<!--pick-container结束-->
+</block>
+<!-- 购物车-----------------------------------------------------------------  -->
+
+<block wx:else>
+
+<view class="pick-container">
+
+    <!-- <view class="pick-box">    -->
+   <scroll-view scroll-y="true"  class="pick-box" >  
+    <block wx:for="{{goodsList}}" wx:key="key">  
+      <view class="list-box clearfix">
+      <image src='{{item.goodsPicUrl}}' class="goods-imgbox">
+      <!-- <image src='{{host}}{{item.goodsPicUrl}}' class="goods-imgbox"> -->
+      </image><!--放图片-->
+      <view class="goods-infor">
+        <text class="goods-title">{{item.goodsName}}</text>
+        <text class="goods-type">{{item.specification}}</text>
+        <view class="goods-price">
+          <!-- <image class='rmb' src='/image/rmb.png'></image> -->
+          <text class='rmb'>￥</text>
+          <text class="price">{{item.money}}</text>
+        </view>
+      </view>
+      <view class="cart-btn">
+        <text data-index="{{index}}" class='iconfont .icon-jian num_left' bindtap='numReduce'></text>
+        <text class='goods_num'>{{item.goodsNum}}</text>
+         <text data-index="{{index}}" class='iconfont .icon-jia num_right' bindtap='increase'></text>
+      </view><!--做购物车添加按钮-->
+    </view>
+    </block>
+    </scroll-view>
+  
+   
+    <view class="btm-inforbox clearfix">
+      <view class="allnumber">
+        <text>共</text>
+        <text> {{giftNumSend}} </text>
+        <text>件礼物</text>
+      </view>
+      <view class="addbtn" bindtap='addMore'>
+        <text>继续添加></text>
+      </view>
+   
+  </view>
+  
+    <!-- <view class='gift'>
+      <view class='gift_car'>
+    
+        <view class='gift_img'>
+          <image src='http://127.0.0.1:8080/images/goodsPic/list-img01.jpg'></image>
+        </view>
+       
+         <view class='gift_msg'>
+            <text>可口可乐\t春季\n</text>
+            
+            <text class='gift_msg_description'>限定硬樱花3屏\n</text>
+            
+            <text class='gift_msg_price'>￥43.00</text>
+        
+         </view>
+         <view class='gift_handler'>
+            <text class='iconfont .icon-jian num_left' bindtap='numReduce'></text>
+         </view>
+      </view>
+      </view>
+   -->
+
+   <!-- <view class="shop_car">
+    <image src='{{host}}{{goods.goodsPicUrl}}'></image>
+    <text class='shop_car_num'>共{{goods.goodsNum}}件礼物</text>
+    <text class="look_all" bindtap='lookAll'>查看全部</text>
+    <text class="shop_car_price">￥{{goods.price}}</text>
+    <text class='shop_goods_name'>商品名</text>
+    
+   
+    <text class="number_handle">
+          <text class='iconfont .icon-jian num_left' bindtap='numReduce'></text>
+        <text class='num_value'>{{goods.goodsNum}}</text>
+        <text class='iconfont .icon-jia num_right' bindtap='increase'></text>
+    </text>
+    <text class="shop_car_add" bindtap='addMore'>
+        继续添加
+    </text>
+   </view> -->
+ </view> 
+
+</block>
+<!--购物车结束----------------------------------------------------------  -->
+<!--way-container开始-->
+<view class='way'>
+<view class='songli'>
+<text class='t3'>{{zhijie}}</text>
+    <text class='t6' bindtap='showDialogBtn'>更换玩法 <text class="iconfont icon-fanhui"></text></text>
+   
+
+</view>
+<picker disabled='{{pickerStatus}}' bindchange="bindPickerChange" value="{{index}}" range="{{openNum}}">
+<view class="way-container" bindtap='showDialogBtn' >
+
+    <view class="way-box clearfix">
+
+<image style='display:{{mon}}' class='img' src='/image/money.png'></image><text class="way-title">{{playMethodText}}</text>
+      <text hidden='{{hidden}}' class="iconfont icon-fanhui4"></text>
+     
+    </view>
+</view>
+</picker>
+</view>
+<!-- 开奖人数-----------------------------------------------  -->
+<picker disabled='{{pickerStatus}}' bindchange="bindPickerChange" value="{{index}}" range="{{openNum}}">
+<view class="way1" hidden='{{pickerStatus}}'>
+    <view class="way-box clearfix">
+      <text class="iconfont icon-icon-test "></text>
+
+       
+    <!-- <view class="picker">
+      当前选择：{{array[index]}}
+    </view> -->
+     <text class='gift_open_num'>开奖人数</text>
+    <text class="number">{{playMethod ==2 ?openNum[openNumIndex] : 3}} 人</text>
+   
+    </view>
+</view>
+ </picker>
+ <!-- 开奖人数 结束-----------------------------------------------  -->
+<!--way-container结束-->
+<!--message-container开始-->
+<view class='message'>
+<text class='t5'>传达心意，写祝福语</text>
+<textarea class="message-container" maxlength="25"	  bindinput ="wishInput"  placeholder='大吉大利，送你好礼！'></textarea>
+</view>
+</view>
+<!--message-container结束-->
+<!--fixed-btn开始-->
+<!-- <view class="fixed-btn" bindtap='getGiftClick'>
+  <text>求</text>
+</view> -->
+<!--fixed-btn结束-->
+<!--price-container开始-->
+<view class='foot'>
+<view class="price-container">
+  <view class="price-box">
+
+      <image class='rmb' src='/image/rmb.png'></image>  <text>{{totalAmountText}}</text>
+    <image bindtap='catchbox' src='/image/box2.png' class='box'></image>
+  
+  </view>
+</view>
+<!--price-container结束-->
+<!--btn-container开始-->
+
+
+<view class="btn-container">
+  <view class="btn-box clearfix" bindtap='sendGift'>
+     <text class='t4'>生成礼物红包</text>
+  </view>
+</view>
+<!--btn-container结束-->
+<!--btmnav-container开始-->
+<view class="btmnav-container">
+  <text bindtap='giftRecode'>使用说明\t|\t</text>
+  <text>用户协议\t|\t</text>
+  <text>企业定制</text>
+</view>
+</view>
+<!--btmnav-container结束-->
+
+<!--弹出框------------------------------------>
+   <!-- <modal bindtap="modelCancel"  class="playModel" hidden="{{ModalHidden}}" confirm-text="" cancel-text="" style="background-color: red;">
+    <view data-which='1' class="play_item_one play_item" bindtap='playItemClick'>直接送礼</view>
+    <view data-which='2' class="palyt_item_two play_item" bindtap='playItemClick'>满人抽奖</view> 
+  </modal> -->
+  <!--弹出框结束----------------------------------------------->
+
+
+  <!-- <modal bindtap="modelCancel"   confirm-text="" cancel-text=""  hidden="true"  bindconfirm=""
+  bindtap="goodListHidden" style="background-color: red;">
+  <!--模态框顶部  -->
+    <!-- <view class="goods"> -->
+    <!--商品子项目  -->
+    
+     <!---------------------------------  -->
+     
+  <!--商品子项目 结束  -->
+    <!-- </view> -->
+     <!--模态框底部  -->
+  <!-- </modal>  --> 
+
+  <!-------------自定模态框-----------  -->
+  <!--弹窗-->
+  
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+<!--内容  -->
+  <view>
+      <view data-which='1' class="play_item_one play_item" bindtap='playItemClick'>直接送礼</view>
+      <view class='item_line'></view>
+    <view data-which='2' class="palyt_item_two play_item" bindtap='playItemClick'>满人抽奖</view>
+    <view class='item_line1'></view>
+    <view data-which='0' class="palyt_item_two play_item" bindtap='hideModal'>取消</view>
+  </view>
+
+<!--内容结束  -->
+</view>
+
+<!--商品列表模态框--------------------------  -->
+
+  

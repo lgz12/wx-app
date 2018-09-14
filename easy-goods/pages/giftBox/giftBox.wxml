@@ -1,0 +1,19 @@
+<!--pages/robgiftbox/robgiftbox.wxml-->
+<view class='background-img' style=' background-image: url(../../image/y.jpg);-webkit-background-size:100% 100%;'>
+<view class="topgiftbox-container">
+  <view class="img-box"></view>
+  <view class="title-box">
+    <text class="title">送来一份礼物，点击领取</text>
+    <text class="way-title">满3人参与自动开奖</text>
+    <text class="message">大吉大利，今晚吃鸡！</text>
+  </view>
+</view>
+<!--topgiftbox-container结束-->
+<!--btmgiftox-container开始-->
+<view class="btmgiftox-container">
+  <view class="open-btn">
+    <text>抢</text>
+  </view>
+</view>
+<!--btmgiftox-container结束-->
+</view>

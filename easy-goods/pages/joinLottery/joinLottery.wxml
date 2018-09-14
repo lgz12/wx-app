@@ -1,0 +1,100 @@
+<!--pages/joinsuss/joinsuss.wxml-->
+<!--header-container开始-->
+<view class="header-container">
+  <view class="headerdes-box">
+    <text class="gift-title">{{title_one}}</text>
+    <text class="way-title">{{title_two}}</text>
+  </view>
+</view>
+<!--header-container结束-->
+<!--box-container开始-->
+<view class="box-container">
+  <view class="box">
+    <image src='{{userSendPic}}' class="imgbox"></image>
+    <view class="box-title">
+      <view class="title">
+        <text>送出一份礼物</text>
+      </view>
+    </view>
+    <view class="message-box">
+      <text>{{wish}}</text>
+    </view>
+
+    <block wx:for="{{goodsList}}" wx:key="key">
+    <view class="goods-box clearfix">
+        <view class="iconfont icon-hudiejie"></view>
+        
+        <image src='{{host}}{{item.goodsPicUrl}}' class="goods-imgbox"></image>
+        <view class="goods-inform">
+          <text class="goods-title">{{item.goodsName}}</text>
+          <text class="goodsnumber">共{{item.goodsNum}}件</text>
+        </view>
+    </view>
+    </block>
+
+    <!-- <view class="goods-box list clearfix">
+        <view class="iconfont icon-hudiejie"></view>
+        <view class="goods-imgbox"></view>
+        <view class="goods-inform">
+          <text class="goods-title">无穷鸡腿</text>
+          <text class="goodsnumber">共1件</text>
+        </view>
+    </view> -->
+      <view class="bottom_address" hidden='{{isHideAddress}}'>
+    <view class='address_msg'>
+      <view>收件人信息：</view>  
+        <text>{{address.provinceName}}\t{{address.cityName}}\t{{address.countyName}}\t{{address.detailInfo}}\n</text>
+        <text>收件人：{{address.userName}}\n</text>
+        <text>联系电话：{{address.telNumber}}</text>
+      </view>
+  </view>
+
+    <block wx:if="{{status == 3}}">
+        <view class="bottom-btn">
+        <button class='btn_share' open-type="share">转发</button>
+         </view>
+    </block>
+    <block wx:else>
+        <view class="bottom-btn" bindtap='submit'>
+       <text open-type="share">{{buttonText}}</text>  
+        </view>
+    </block>
+    
+    <block wx:if="{{status == 3}}">
+
+    <view class="joinnumber">
+      <text>已有{{playerNum}}人参与</text>
+    </view>
+    <view class="perimg-container">
+      <view class="img-box">
+      <block wx:for="{{playerList}}" wx:key="key">
+        <image src='{{item.avatarUrl}}' class="perimg"></image>
+        </block>
+        <!-- <view class="perimg"></view> -->
+      </view>
+    </view>
+
+    </block>
+    <block wx:else>
+
+    <view class="get-inform">
+      <view class="inform-title">
+        <text>共{{playerNum}}个人参与，{{winPlayerNum}}人中奖</text>
+      </view>
+
+       <block wx:for="{{winPlayerList}}" wx:key="key">
+      <view class=" informbox clearfix">
+        <image src='{{item.avatarUrl}}' class="getimg-box">
+        </image>
+        <text class="goods-name">{{item.goodsName}}</text>
+      </view>
+      </block> 
+
+  
+
+    </view>
+    </block>
+  </view>
+</view>
+<!--box-container结束-->
+
