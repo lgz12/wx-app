@@ -8,7 +8,7 @@
 ## 本地局域网的E-Charts项目
 
 
-![图片](https://raw.githubusercontent.com/lgz12/wx-app/master/1537930691.png）
+![图片](https://github.com/lgz12/wx-app/blob/master/1537930691.png）
   
   
 ## 项目运行
