@@ -4,10 +4,13 @@
 
 ![视频](./wx-app.gif)
 
+
 ## 本地局域网的E-Charts项目
 
-![二维码](./1537930691.png）
 
+![图片](1537930691.png）
+  
+  
 ## 项目运行
 >克隆项目：
 >>git clone `'https://github.com/lgz12/wx-app.git'`
